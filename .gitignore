@@ -1,0 +1,7 @@
+# folder/files added here never sync with git
+
+/node_modules
+
+/dist
+
+/.parcel-cache
