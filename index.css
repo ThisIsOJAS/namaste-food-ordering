@@ -62,7 +62,7 @@
   padding: 5px;
   border-radius: 5px;
   width: 280px;
-  height: 360px;
+  /* height: 360px; */
   border: 1px solid black;
   background-color: rgb(125, 125, 102);
   text-align: center;
@@ -76,5 +76,6 @@
 .card-image {
   height: 180px;
   width: 270px;
-  padding: 5px;
+  border-radius: 5%;
+  border: 1px solid black;
 }
