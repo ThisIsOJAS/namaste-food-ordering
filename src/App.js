@@ -1,32 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-/**
- * ROUGH APP LAYOUT
- *
- *Header
- *  -Logo
- *  -Navbar items
- *
- *Body
- *  -search
- *  -restaurant container
- *    -restaurant card
- *      -restaurant name
- *      -rating
- *      -image
- *      -cuisine
- *      -delivery time
- *
- * Footer
- *  -copyright
- *  -links
- *  -address
- *  -contact
- */
-
-//--------------------
-//--------------------
 
 const Header = () => {
   return (
