@@ -16,23 +16,25 @@ Coding completely in JSX inside App.js file with root available in index.html an
 
 ## Basic App Layout
 
--Header
--Logo &nbsp;
--Navbar items &nbsp;
--Body
--Search &nbsp;
--Restaurant Container &nbsp;
--Restaurant Card &nbsp;&nbsp;
--Restaurant Name &nbsp;&nbsp;&nbsp;
--Rating &nbsp;&nbsp;&nbsp;
--Image &nbsp;&nbsp;&nbsp;
--Cuisine &nbsp;&nbsp;&nbsp;
--Delivery Time &nbsp;&nbsp;&nbsp;
--Footer
--Copyright &nbsp;
--Links &nbsp;
--Address &nbsp;
--Contact &nbsp;
+- Header
+  > Logo
+  > Navbar items
+- Body
+  > Search
+  > Restaurant Container
+  >
+  > > Restaurant Card
+  > >
+  > > > Restaurant Name
+  > > > Rating
+  > > > Image
+  > > > Cuisine
+  > > > Delivery Time
+- Footer
+  > Copyright
+  > Links
+  > Address
+  > Contact
 
 ## Episode 4 code uploaded
 
