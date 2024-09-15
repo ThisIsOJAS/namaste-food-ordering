@@ -54,7 +54,6 @@ Then we replaced this line of code map and key concept because even this method 
   > - Default export/import
   >   > - export default Component;
   >   > - import Component from "path";
-
-> - Named export/import
->   > - export const component;
->   > - import { component } from "path";
+  > - Named export/import
+  >   > - export const component;
+  >   > - import { component } from "path";
