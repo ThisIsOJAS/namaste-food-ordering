@@ -47,3 +47,14 @@ Both SearchBox and Restaurant Card stays inside Body container. SearchBox is on 
 We added swiggy's public API data in our code for various restaurant details and use props inside Card to start using data by List numbers only (<RestaurantCard resData={resList[0]}/>)
 
 Then we replaced this line of code map and key concept because even this method wants you to add 1 line of code for each restaurant. We passed resList object into mapping and named it "restaurant" and used it to create mapping function which now adds any new restaurant data to website itself without any more input from front end.
+
+## Episode 5 code (WIP)
+
+- 2 types of components
+  > - Default export/import
+  >   > - export default Component;
+  >   > - import Component from "path";
+
+> - Named export/import
+>   > - export const component;
+>   > - import { component } from "path";
