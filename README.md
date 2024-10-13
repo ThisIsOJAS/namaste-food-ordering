@@ -48,7 +48,9 @@ We added swiggy's public API data in our code for various restaurant details and
 
 Then we replaced this line of code map and key concept because even this method wants you to add 1 line of code for each restaurant. We passed resList object into mapping and named it "restaurant" and used it to create mapping function which now adds any new restaurant data to website itself without any more input from front end.
 
-## Episode 5 code (WIP)
+## Episode 5 code uploaded
+
+Added proper file structure in the project directory and implemented components import-exports/
 
 - 2 types of components
   > - Default export/import
@@ -57,3 +59,19 @@ Then we replaced this line of code map and key concept because even this method 
   > - Named export/import
   >   > - export const component;
   >   > - import { component } from "path";
+
+Started the topic React Hooks
+
+- React Hooks -> Normal JS utility function
+  > - useState() - Super powerful react variables
+  > - useEffect()
+
+useState is a like function which is destructured into 2 array components - xyz and setXyz. This function is used to control a particular Virtual DOM whose initial default value is stored inside braces of useState. Following statement shows example of it -
+
+> [xyz, setXyz] = useState(initial default)
+
+This initial default is passed into xyz which is rendered onto the Virtual DOM and we use this data to perform functions on it such as "Top-Rated" filter made in Episode-05. The new value is stored in a 3rd variable which is passed into setXyz as if we are invoking value into it => setXyz(3rd variable).
+
+Then, useState compares both xyz and setXyz using Reconciliation (which implements Diff Algorithm) and re-renders the new updated set value to our Virtual DOM thus updating website on the fly without reloading it.
+
+## Episode 6 code started

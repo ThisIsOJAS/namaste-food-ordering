@@ -32,18 +32,30 @@
   padding-right: 20px;
 }
 
-.search {
+/* .search {
   padding: 5px 0px;
   display: flex;
   align-items: center;
   gap: 5px;
-}
+} */
 
-.search-box > input {
+/* .search-box > input {
   border: 1px solid black;
 }
 
 .button {
+  border: 1px solid black;
+} */
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.reset-btn {
+  margin: 10px;
+  cursor: pointer;
   border: 1px solid black;
 }
 
