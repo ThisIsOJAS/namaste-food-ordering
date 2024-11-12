@@ -1,13 +1,13 @@
 import { MEDIA_ASSET_URL } from "../utils/constants";
 
-const RestaurantCard = (props) => {
-  const { resData } = props;
+// Destructuring PROPS
+const RestaurantCard = ({ resData, index }) => {
   const { name, cuisines, avgRating, costForTwo } = resData?.info;
   return (
-    <div className="restaurant-card">
+    <div className={index % 2 == 0 ? "resCardSage" : "resCardYellow"}>
       <img
         className="card-image"
-        src={MEDIA_ASSET_URL + resData.info.cloudinaryImageId}
+        src={MEDIA_ASSET_URL + resData?.info?.cloudinaryImageId}
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>

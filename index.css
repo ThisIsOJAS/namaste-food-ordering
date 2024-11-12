@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-  background-color: darkslategray;
+  background-color: #f87a53;
 }
 
 .logo {
@@ -32,33 +32,6 @@
   padding-right: 20px;
 }
 
-/* .search {
-  padding: 5px 0px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-} */
-
-/* .search-box > input {
-  border: 1px solid black;
-}
-
-.button {
-  border: 1px solid black;
-} */
-
-.filter-btn {
-  margin: 10px;
-  cursor: pointer;
-  border: 1px solid black;
-}
-
-.reset-btn {
-  margin: 10px;
-  cursor: pointer;
-  border: 1px solid black;
-}
-
 .res-container {
   padding: 25px;
   display: grid;
@@ -66,7 +39,7 @@
   grid-template-columns: auto auto auto auto;
   gap: 25px;
   border: 1px solid rgb(255, 221, 0);
-  background-color: rgb(143, 143, 143);
+  background-color: #4c4b16;
 }
 
 .restaurant-card {
@@ -89,5 +62,82 @@
   height: 180px;
   width: 270px;
   border-radius: 5%;
+  border: 1px solid black;
+}
+
+.shimmerContainer {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.shimmerCard {
+  height: 200px;
+  width: 400px;
+  background-color: grey;
+}
+
+.login-btn {
+  padding: 0px 10px;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.resCardSage {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 280px;
+  /* height: 360px; */
+  border: 1px solid black;
+  text-align: center;
+  transition: 0.2s ease-in-out all;
+  background-color: #898121;
+}
+
+.resCardYellow {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 280px;
+  /* height: 360px; */
+  border: 1px solid black;
+  text-align: center;
+  transition: 0.2s ease-in-out all;
+  background-color: #e6c767;
+}
+
+.resCardSage:hover {
+  transform: scale(1.1);
+}
+
+.resCardYellow:hover {
+  transform: scale(1.1);
+}
+
+.search-box {
+  border: 1px solid black;
+}
+
+.filter {
+  display: flex;
+  margin: 10px;
+  gap: 5px;
+}
+
+.search-btn {
+  background-color: grey;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.filter-btn {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: pink;
+}
+
+.reset-btn {
+  cursor: pointer;
   border: 1px solid black;
 }
