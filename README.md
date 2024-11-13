@@ -74,4 +74,23 @@ This initial default is passed into xyz which is rendered onto the Virtual DOM a
 
 Then, useState compares both xyz and setXyz using Reconciliation (which implements Diff Algorithm) and re-renders the new updated set value to our Virtual DOM thus updating website on the fly without reloading it.
 
-## Episode 6 code started
+## Episode 6 code uploaded
+
+Added useEffect() functionality to implement Live API data "after" application is rendered.
+
+Added CORS plugin on chrome to bypass CORS policy error.
+
+Used "async await" method since fetchdata() returns promise which was then converted into json and tracked API to find our restaurant array.
+
+Implemented basic Shimmer UI to demonstrate skeleton cards till the live API renders its data.
+
+With the help of useState(),
+
+- I built 5 functionalities for my Restaurant Cards
+  > - Login/Logout button => A basic button in header component which demonstrates useState() re-render on clicking and switching state between displaying login or logout
+  > - Top Rated Restaurant => which filters out restaurants with only rating above 4.3
+  > - Reset => which brings back our list unfiltereed
+  > - Search Box => 1 useState() implemented the words we were typing and displaying on the Box (additionally I added key press functionality which does the search button task (4) here itself just by pressing enter)
+  > - Search button => firing this button compared our search box to the names of restaurant and filter out matching results
+
+## Episode 7 code (WIP)

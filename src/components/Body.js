@@ -29,11 +29,11 @@ const Body = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      buttonDabGaya();
+      buttonPressed();
     }
   };
 
-  const buttonDabGaya = () => {
+  const buttonPressed = () => {
     const filterList = resList.filter((item) =>
       item.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
@@ -60,7 +60,7 @@ const Body = () => {
             }}
             onKeyDown={handleKeyDown}
           />
-          <button className="search-btn" onClick={buttonDabGaya}>
+          <button className="search-btn" onClick={buttonPressed}>
             Search
           </button>
         </div>
@@ -73,7 +73,7 @@ const Body = () => {
             setCopyList(filterList);
           }}
         >
-          Top Police Picks
+          Top Rated Restaurants
         </button>
 
         <button
@@ -82,7 +82,7 @@ const Body = () => {
             setCopyList(resList);
           }}
         >
-          Reset Filter
+          Reset
         </button>
       </div>
 
