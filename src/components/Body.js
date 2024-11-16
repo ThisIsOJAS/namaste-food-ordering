@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -15,6 +16,8 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
+
+    // https://crossorigin.me/
 
     const json = await data.json();
 
@@ -88,12 +91,11 @@ const Body = () => {
 
       <div className="res-container">
         {copyList.map((restaurant, index) => {
+          const link = "/restaurant/" + restaurant?.info?.id;
           return (
-            <RestaurantCard
-              key={restaurant.info.id}
-              resData={restaurant}
-              index={index}
-            />
+            <Link key={restaurant.info.id} to={link}>
+              <RestaurantCard resData={restaurant} index={index} />
+            </Link>
           );
         })}
       </div>

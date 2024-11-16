@@ -93,4 +93,17 @@ With the help of useState(),
   > - Search Box => 1 useState() implemented the words we were typing and displaying on the Box (additionally I added key press functionality which does the search button task (4) here itself just by pressing enter)
   > - Search button => firing this button compared our search box to the names of restaurant and filter out matching results
 
-## Episode 7 code (WIP)
+## Episode 7 code (code uploaded)
+
+Implemented React Routers throughout the website including -
+
+> - Home Button
+> - About Us Page
+> - Contact Page
+> - Re-usable Restaurant Menu Page
+
+Also, implemented child routers using "Outlet" component to ensure faster load times with single page application locking the header component.
+
+Made re-usable restaurant page which fetches data from a seperate swiggy API where "Restaurant ID" defines a new router page for respective restaurant and it's exact API accordingly.
+
+Used "Link" component to ensure only the effected component is re-rendered and which also made cards fully clickable.
