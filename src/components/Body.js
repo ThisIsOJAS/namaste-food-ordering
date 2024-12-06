@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -42,6 +43,10 @@ const Body = () => {
     setCopyList(filterList);
     setSearchText("");
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus) return <h1>Oops you are not connected to Internet</h1>; // "!onlineStatus" = "onlineStatus == false"
 
   // conditional rendering
 

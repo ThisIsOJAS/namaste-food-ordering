@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer.js";
+import useRestaurantCard from "../utils/useRestaurantMenu.js";
 
 const RestaurantMenu = () => {
-  const [menuInfo, setMenuInfo] = useState(null);
-
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65200&lng=77.16630&restaurantId=" +
-        resId +
-        "&catalog_qa=undefined&submitAction=ENTER"
-    );
-    const json = await data.json();
-
-    setMenuInfo(json?.data);
-  };
+  const menuInfo = useRestaurantCard(resId); // now our menuInfo is directly updated from custom hook, and then we proceed as usual
 
   if (menuInfo == null) {
     return <Shimmer />;

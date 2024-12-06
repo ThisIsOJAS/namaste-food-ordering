@@ -44,22 +44,6 @@
   background-color: #4c4b16;
 }
 
-.restaurant-card {
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  width: 280px;
-  /* height: 360px; */
-  border: 1px solid black;
-  background-color: rgb(125, 125, 102);
-  text-align: center;
-  transition: 0.2s ease-in-out all;
-}
-
-.restaurant-card:hover {
-  transform: scale(1.1);
-}
-
 .card-image {
   height: 180px;
   width: 270px;
@@ -83,6 +67,7 @@
   padding: 0px 10px;
   cursor: pointer;
   background-color: aqua;
+  border: solid 1px black;
 }
 
 .resCardSage {
@@ -90,6 +75,7 @@
   padding: 5px;
   border-radius: 5px;
   width: 280px;
+  height: 380px;
   border: 1px solid black;
   text-align: center;
   transition: 0.2s ease-in-out all;
@@ -101,6 +87,7 @@
   padding: 5px;
   border-radius: 5px;
   width: 280px;
+  height: 380px;
   border: 1px solid black;
   text-align: center;
   transition: 0.2s ease-in-out all;

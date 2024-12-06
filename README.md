@@ -112,4 +112,19 @@ Used "Link" component to ensure only the effected component is re-rendered and w
 
 Added details using Linkedin APi on About age and also made similar component using Class (just for understanding).
 
-## Episode 9 code WIP
+## Episode 9 code code uploaded
+
+Each component should perform only 1 activity. This is an industry standard to produce optimized product. As we saw in our Body.js , that component was fetching API data to load restaurant cards and it was also displaying whole Body component. Hence I implemented Custom Hooks to transfer the data fetching responsibility. Now, this custom hook is imported and output is assigned to a variable in this other component. Therefore, we can use it accordingly.
+
+Also, Lazy Loading and Suspense was implemented in order to improve load times and keep extra components unloaded unless user clicks on their button.
+
+- Types of optimization loading -
+
+> - Lazy Loading
+> - Chunking
+> - Code Splitting
+> - Dynamic Bundling
+> - on-Demand Loading
+> - Dynamic Import
+
+## Episode 10 code WIP
