@@ -53,12 +53,12 @@ const Body = () => {
   return resList.length == 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div>
+      <div className="flex gap-2  bg-blue-100 p-2">
+        <div className="border-2 rounded-md">
           <input
+            className="shadow-md"
             type="text"
-            className="search-box"
             placeholder="Search"
             value={searchText}
             onChange={(e) => {
@@ -66,12 +66,15 @@ const Body = () => {
             }}
             onKeyDown={handleKeyDown}
           />
-          <button className="search-btn" onClick={buttonPressed}>
+          <button
+            className="bg-slate-300 px-2 shadow-md hover:scale-110 transition-all ease-in-out"
+            onClick={buttonPressed}
+          >
             Search
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="bg-pink-200 rounded-md px-2 shadow-md hover:scale-110 transition-all ease-in-out"
           onClick={() => {
             const filterList = resList.filter(
               (item) => item.info.avgRating >= 4.3
@@ -83,7 +86,7 @@ const Body = () => {
         </button>
 
         <button
-          className="reset-btn"
+          className="bg-green-300 rounded-md px-2 shadow-md hover:scale-110 transition-all ease-in-out"
           onClick={() => {
             setCopyList(resList);
           }}
@@ -92,7 +95,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="grid grid-cols-4 justify-normal gap-10 bg-[#a8bd66] p-8">
         {copyList.map((restaurant, index) => {
           const link = "/restaurant/" + restaurant?.info?.id;
           return (

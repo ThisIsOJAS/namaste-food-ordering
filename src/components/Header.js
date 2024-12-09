@@ -9,25 +9,40 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between p-2 shadow-xl bg-[#f87a53]">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <Link to="/">
+          <img
+            className="h-20 shadow-lg border rounded-full hover:scale-110 transition-all ease-in-out"
+            src={LOGO_URL}
+          />
+        </Link>
       </div>
-      <div className="nav-items">
-        <ul>
+      <div>
+        <ul className="flex gap-6 pt-6 text-lg pr-2">
           <Link to="/">
-            <li>Home</li>
+            <li className="underline hover:scale-110 transition-all ease-in-out">
+              Home
+            </li>
           </Link>
           <Link to="/about">
-            <li>About Us</li>
+            <li className="underline hover:scale-110 transition-all ease-in-out">
+              About Us
+            </li>
           </Link>
           <Link to="/contact">
-            <li>Contact</li>
+            <li className="underline hover:scale-110 transition-all ease-in-out">
+              Contact
+            </li>
           </Link>
-          <li>Cart</li>
-          <li>Online Status : {!onlineStatus ? "🔴" : "🟢"}</li>
+          <li className="border-2 border-black rounded-md px-2">
+            Online Status : {!onlineStatus ? "🔴" : "🟢"}
+          </li>
+          <li className="px-1 border border-black rounded-lg bg-gray-300 hover:scale-110 transition-all ease-in-out shadow-md">
+            Cart: 0
+          </li>
           <button
-            className="login-btn"
+            className="px-1 border border-black rounded-lg hover:scale-110 transition-all ease-in-out bg-gray-300 shadow-md"
             onClick={() => {
               btnNameReact == "Login"
                 ? setBtnNameReact("Logout")

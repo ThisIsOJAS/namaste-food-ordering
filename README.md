@@ -127,4 +127,8 @@ Also, Lazy Loading and Suspense was implemented in order to improve load times a
 > - on-Demand Loading
 > - Dynamic Import
 
-## Episode 10 code WIP
+## Episode 10 code uploaded
+
+Implemented Tailwind CSS in the project and completely replaced all external CSS. (Future Dark Mode update)
+
+## Episode 11 code WIP

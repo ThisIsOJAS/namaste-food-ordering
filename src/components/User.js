@@ -21,12 +21,20 @@ const User = () => {
   const { avatar_url, name, location, bio } = userInfo;
 
   return (
-    <div className="user-card">
-      <img className="profile-pic" src={avatar_url} />
-      <h2>Creator - {name}</h2>
-      <h2>Location - {location}</h2>
-      <p>Bio - {bio}</p>
-      <a href="https://github.com/ThisIsOJAS">Github</a>
+    <div className="h-[450px] w-[350px] bg-green-400 rounded-md p-4 border border-black shadow-lg">
+      <img
+        className="rounded-full h-40 border-2 border-black"
+        src={avatar_url}
+      />
+      <h2 className="p-2">Creator - {name}</h2>
+      <h2 className="p-2">Location - {location}</h2>
+      <p className="p-2">Bio - {bio}</p>
+      <a
+        className="p-2 border border-black rounded-lg hover:scale-110 transition-all ease-in-out bg-gray-300 shadow-md inline-block"
+        href="https://github.com/ThisIsOJAS"
+      >
+        Github
+      </a>
     </div>
   );
 };
