@@ -29,11 +29,10 @@ const User = () => {
       <h2 className="p-2">Creator - {name}</h2>
       <h2 className="p-2">Location - {location}</h2>
       <p className="p-2">Bio - {bio}</p>
-      <a
-        className="p-2 border border-black rounded-lg hover:scale-110 transition-all ease-in-out bg-gray-300 shadow-md inline-block"
-        href="https://github.com/ThisIsOJAS"
-      >
-        Github
+      <a href="https://github.com/ThisIsOJAS">
+        <button className="p-2 border border-black rounded-lg hover:scale-110 transition-all ease-in-out bg-gray-300 shadow-md">
+          Github
+        </button>
       </a>
     </div>
   );

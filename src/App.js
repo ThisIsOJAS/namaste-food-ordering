@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,15 +7,32 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 
 const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
 
 const AppLayout = () => {
+  // The context wrap used below will override user name everywhere as if it fetched from the server
+
+  const [userName, setUserName] = useState("");
+
+  // Authentication Process
+
+  useEffect(() => {
+    const userDataName = { name: "Ojas Gupta" };
+    setUserName(userDataName.name);
+  }, []);
+
+  // file_name_for_context_data.Provider --> wrapping entire App inside it helps us access this updated data everywhere or basically it can update our loggedInUser data
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -37,7 +54,14 @@ const appRouter = createBrowserRouter([
         ),
       },
 
-      { path: "/contact", element: <Contact /> },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Contact />
+          </Suspense>
+        ),
+      },
 
       { path: "/restaurant/:resId", element: <RestaurantMenu /> },
     ],

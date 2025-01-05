@@ -1,20 +1,41 @@
 import { MEDIA_ASSET_URL } from "../utils/constants";
-
+import React from "react";
 // Destructuring PROPS
-const RestaurantCard = ({ resData, index }) => {
+const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo } = resData?.info;
   return (
-    <div className="rounded-md border border-gray-600 max-w-[300px] p-4 pl-6 h-[450px] hover:scale-110 transition-all ease-in-out bg-[#bba137] shadow-lg">
-      <img
-        className="h-[250px] w-[250px] rounded-md border border-black"
-        src={MEDIA_ASSET_URL + resData?.info?.cloudinaryImageId}
-      />
-      <h3 className="pt-1 font-bold">{name}</h3>
-      <h4 className="pt-1">{cuisines.join(", ")}</h4>
-      <p className="pt-1">{avgRating} ⭐</p>
-      <p className="pt-1">{costForTwo}</p>
+    <div className="rounded-3xl overflow-hidden h-[400px] hover:scale-110 transition-all ease-in-out bg-[#ffffff3d] shadow-2xl">
+      <div className="h-64">
+        <img
+          className="h-full w-full object-cover"
+          src={MEDIA_ASSET_URL + resData?.info?.cloudinaryImageId}
+          alt="Restaurant"
+        />
+      </div>
+      <div className="pt-2 px-6">
+        <h3 className="font-bold truncate">{name}</h3>{" "}
+        {/* truncate class ensure name stays in 1 line and adds ellipsis if it overflows */}
+        <h4 className="line-clamp-2">{cuisines.join(", ")}</h4>{" "}
+        {/* line-clamp-2 ensures cuisines stay in 2 lines and adds ellipsis if it overflows */}
+        <p>{avgRating} ⭐</p>
+        <p>{costForTwo}</p>
+      </div>
     </div>
   );
+};
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (resData) => {
+    return (
+      <React.Fragment>
+        <label className="absolute my-6 bg-yellow-400 text-black font-bold px-2 py-1 text-sm">
+          Open Now
+        </label>
+
+        <RestaurantCard {...resData} />
+      </React.Fragment>
+    );
+  };
 };
 
 export default RestaurantCard;

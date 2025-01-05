@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import { useState, useEffect, useContext } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [copyList, setCopyList] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  const { loggedInUser, setUserName, userName } = useContext(UserContext);
 
   useEffect(() => {
     fetchdata();
@@ -21,11 +26,11 @@ const Body = () => {
     const json = await data.json();
 
     setResList(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
 
     setCopyList(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
   };
 
@@ -55,9 +60,9 @@ const Body = () => {
   ) : (
     <div>
       <div className="flex gap-2  bg-blue-100 p-2">
-        <div className="border-2 rounded-md">
+        <div className="border-2">
           <input
-            className="shadow-md"
+            className="shadow-md rounded-md px-2"
             type="text"
             placeholder="Search"
             value={searchText}
@@ -67,7 +72,7 @@ const Body = () => {
             onKeyDown={handleKeyDown}
           />
           <button
-            className="bg-slate-300 px-2 shadow-md hover:scale-110 transition-all ease-in-out"
+            className="bg-slate-300 px-2 shadow-md hover:scale-110 transition-all ease-in-out rounded-md"
             onClick={buttonPressed}
           >
             Search
@@ -93,14 +98,38 @@ const Body = () => {
         >
           Reset
         </button>
+
+        <label className="text-lg">Your Name :</label>
+
+        <input
+          className="rounded-md px-2 shadow-md"
+          type="text"
+          placeholder="& press Enter"
+          value={userName}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setUserName(e.target.value);
+            }
+          }}
+        />
       </div>
 
-      <div className="grid grid-cols-4 justify-normal gap-10 bg-[#a8bd66] p-8">
-        {copyList.map((restaurant, index) => {
+      <div>
+        <h1 className="bg-blue-100 pb-2 px-4 text-2xl font-bold">
+          Welcome back, {loggedInUser}
+        </h1>
+      </div>
+
+      <div className="grid grid-cols-4 justify-normal gap-20 bg-[#a8bd66] p-12">
+        {copyList.map((restaurant) => {
           const link = "/restaurant/" + restaurant?.info?.id;
           return (
-            <Link key={restaurant.info.id} to={link}>
-              <RestaurantCard resData={restaurant} index={index} />
+            <Link key={restaurant?.info?.id} to={link}>
+              {restaurant?.info?.isOpen ? (
+                <RestaurantCardPromoted resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           );
         })}
