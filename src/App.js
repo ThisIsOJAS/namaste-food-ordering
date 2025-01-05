@@ -28,10 +28,8 @@ const AppLayout = () => {
 
   return (
     <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
+      <Header />
+      <Outlet />
     </UserContext.Provider>
   );
 };

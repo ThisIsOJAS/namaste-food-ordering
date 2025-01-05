@@ -131,4 +131,8 @@ Also, Lazy Loading and Suspense was implemented in order to improve load times a
 
 Implemented Tailwind CSS in the project and completely replaced all external CSS. (Future Dark Mode update)
 
-## Episode 11 code WIP
+## Episode 11 code uploaded
+
+Implemented Higher-Order function to enahnce restaurant cards on homepage with "Opened" Label. Completely changed restaurant menu where full menu data has been extracted from swiggy api and displayed using "Accordion". Finally, Context API was introduced to handle globally available data across website. Some UI updates were added along with Tailwind added in more pages.
+
+## Episode 12 code WIP
