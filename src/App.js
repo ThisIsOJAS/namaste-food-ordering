@@ -8,6 +8,9 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
@@ -27,10 +30,14 @@ const AppLayout = () => {
   // file_name_for_context_data.Provider --> wrapping entire App inside it helps us access this updated data everywhere or basically it can update our loggedInUser data
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <Header />
-      <Outlet />
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -62,6 +69,8 @@ const appRouter = createBrowserRouter([
       },
 
       { path: "/restaurant/:resId", element: <RestaurantMenu /> },
+
+      { path: "/cart", element: <Cart /> },
     ],
     errorElement: <Error />,
   },

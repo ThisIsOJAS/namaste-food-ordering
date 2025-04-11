@@ -1,11 +1,21 @@
-const CategoryFood = (khana) => {
-  const item = khana?.khana;
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
+const CategoryFood = (props) => {
+  const item = props?.khana;
   const { name, price, defaultPrice, description, imageId } = item?.card?.info;
-
   const { rating } = item?.card?.info?.ratings?.aggregatedRating;
-
   const { vegClassifier } = item?.card?.info?.itemAttribute;
+  const { isCart } = props;
+
+  console.log("raju", item.card.info.name);
+
+  const dispatch = useDispatch();
+
+  const handleAddItems = (item) => {
+    //Dispatch an action to add items to the cart
+    dispatch(addItem(item));
+  };
 
   return (
     <div className="pt-2 pb-4 my-2 border-b border-dashed border-slate-400 flex justify-between">
@@ -30,13 +40,27 @@ const CategoryFood = (khana) => {
         <h2 className="text-green-800 font-semibold text-left">
           {rating ? rating + " ⭐" : " "}
         </h2>
-        <p className="text-slate-600 text-left">{description}</p>
+        <div>
+          {!isCart ? (
+            <p className="text-slate-600 text-left">{description}</p>
+          ) : (
+            <></>
+          )}
+        </div>
       </span>
       <div className="w-3/12 ml-2">
         <div className="absolute ml-2 mt-2">
-          <button className="bg-slate-200 text-black rounded-lg px-2">
-            + Add
-          </button>
+          {" "}
+          {!isCart ? (
+            <button
+              className="bg-slate-200 text-black rounded-lg px-2"
+              onClick={() => handleAddItems(item)}
+            >
+              + Add
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
         <img
           className="h-44 w-44 bg-red-200 rounded-2xl shadow-lg border border-gray-400"

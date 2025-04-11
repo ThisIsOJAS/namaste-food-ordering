@@ -57,7 +57,13 @@ const MenuCategory = (props) => {
       {showItems && (
         <div className="mx-4">
           {FoodItem?.map((item) => {
-            return <CategoryFood khana={item} key={item?.card?.info?.id} />;
+            return (
+              <CategoryFood
+                khana={item}
+                key={item?.card?.info?.id}
+                isCart={false}
+              />
+            );
           })}
         </div>
       )}

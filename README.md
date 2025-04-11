@@ -44,7 +44,7 @@ Just between Header and Body, we added 2 new components - SearchBox and Restaura
 
 Both SearchBox and Restaurant Card stays inside Body container. SearchBox is on top whilst Restaurant Card populates the space inside Bodymfrom there on.
 
-We added swiggy's public API data in our code for various restaurant details and use props inside Card to start using data by List numbers only (<RestaurantCard resData={resList[0]}/>)
+We added swiggy's public API data in our code for various restaurant details and use props inside Card to start using data by List numbers only (< RestaurantCard resData={resList[0]}/>)
 
 Then we replaced this line of code map and key concept because even this method wants you to add 1 line of code for each restaurant. We passed resList object into mapping and named it "restaurant" and used it to create mapping function which now adds any new restaurant data to website itself without any more input from front end.
 
@@ -135,4 +135,25 @@ Implemented Tailwind CSS in the project and completely replaced all external CSS
 
 Implemented Higher-Order function to enahnce restaurant cards on homepage with "Opened" Label. Completely changed restaurant menu where full menu data has been extracted from swiggy api and displayed using "Accordion". Finally, Context API was introduced to handle globally available data across website. Some UI updates were added along with Tailwind added in more pages.
 
-## Episode 12 code WIP
+## Episode 12 code uploaded
+
+- Redux Toolkit
+
+> - install @reduxjs/tookit and react-redux
+> - build our store
+> - connect our store to app
+> - create slices (cart slices)
+> - dispatch action
+
+We create an appStore component who stores all the different "slices as reducer". It is a single collection of major components that implement redux library for their own data flow.
+
+We then create each slice component where we write their initial state (acts like default state of useState) and we write "functions regarding it called as reducers" (yeah same name but different purpose). All these functions create an action (for what it's gonna do with slice state) and payload (what data modification will be done). All the actions are exported as named exports and "entire slice is imported inside appStore".
+
+This appStore is connected direcctly to App.js where whole app is wrapped inside < Provider > tag so every component can access this data.
+
+Lastly, we implement these actions in our component ->
+
+> - useSelector allows the component to access the whole data array of any child component but we need to carefully select very specific part of our data as this component gets subscribed to that data set and any change to it would trigger re-render on this component creating performance issues.
+> - useDispatch allows us to access actions and payload for any function built for the slice. And using it we can change the default state associated with the slice which triggers a change for whole data array supplied to the component using selector, causing a re-render since it is subscribed to that data.
+
+## Episode 13 code WIP
