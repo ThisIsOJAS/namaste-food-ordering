@@ -149,7 +149,7 @@ We create an appStore component who stores all the different "slices as reducer"
 
 We then create each slice component where we write their initial state (acts like default state of useState) and we write "functions regarding it called as reducers" (yeah same name but different purpose). All these functions create an action (for what it's gonna do with slice state) and payload (what data modification will be done). All the actions are exported as named exports and "entire slice is imported inside appStore".
 
-This appStore is connected direcctly to App.js where whole app is wrapped inside < Provider > tag so every component can access this data.
+This appStore is connected directly to App.js where whole app is wrapped inside < Provider > tag so every component can access this data.
 
 Lastly, we implement these actions in our component ->
 
@@ -157,3 +157,18 @@ Lastly, we implement these actions in our component ->
 > - useDispatch allows us to access actions and payload for any function built for the slice. And using it we can change the default state associated with the slice which triggers a change for whole data array supplied to the component using selector, causing a re-render since it is subscribed to that data.
 
 ## Episode 13 code WIP
+
+Types of Testing (developer) -
+
+> - Unit Testing
+> - Integration Testing
+> - End to End Testing - e2e
+
+Setting up Testing in our app -
+
+> - Install React Testing Library
+> - Install Jest
+> - Install Babel dependencies
+> - Configure Babel
+> - Configure parcel config file to disbale default babel transpilation (so jest can use it's own babel configuration)
+> - Jest configuration (npx jest --init)
