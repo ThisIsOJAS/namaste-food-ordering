@@ -172,3 +172,7 @@ Setting up Testing in our app -
 > - Configure Babel
 > - Configure parcel config file to disbale default babel transpilation (so jest can use it's own babel configuration)
 > - Jest configuration (npx jest --init)
+> - Install jsdom library
+> - Install @babel/preset-react -> to make JSX work in test cases
+> - Install @babel/preset-react inside my babel config
+> - Install @testing-library/jest-dom (npm i -D @testing-library/jest-dom)

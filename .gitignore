@@ -5,3 +5,6 @@
 /dist
 
 /.parcel-cache
+
+
+/coverage

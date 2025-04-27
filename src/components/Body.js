@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 
@@ -14,9 +14,11 @@ const Body = () => {
 
   const { loggedInUser, setUserName, userName } = useContext(UserContext);
 
+  const location = useLocation();
+
   useEffect(() => {
     fetchdata();
-  }, []);
+  }, [location]);
 
   const fetchdata = async () => {
     const data = await fetch(

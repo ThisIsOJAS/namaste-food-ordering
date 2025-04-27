@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const Contact = () => {
+  const location = useLocation();
+  useEffect(() => {}, [location]);
+
+  console.log("Contact component rendered");
+
   return (
     <div>
       <div>
@@ -19,7 +27,7 @@ const Contact = () => {
         </a>
       </div>
       <div className="pl-8 pt-4">
-        <h2 className="text-xl">Fill in the details</h2>
+        <p className="text-xl font-semibold">Fill in the details</p>
         <form>
           <input
             type="text"
