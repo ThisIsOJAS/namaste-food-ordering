@@ -1,10 +1,4 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
 const Contact = () => {
-  const location = useLocation();
-  useEffect(() => {}, [location]);
-
   console.log("Contact component rendered");
 
   return (
