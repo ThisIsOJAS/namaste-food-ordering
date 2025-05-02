@@ -7,7 +7,3 @@
 /.parcel-cache
 
 /coverage
-
-/components/__test__/sum.test.js
-
-/components/sum.js
