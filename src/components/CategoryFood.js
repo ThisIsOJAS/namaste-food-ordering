@@ -8,7 +8,7 @@ const CategoryFood = (props) => {
   const { vegClassifier } = item?.card?.info?.itemAttribute;
   const { isCart } = props;
 
-  console.log("hello", props.khana);
+  // console.log("hello", props.khana);
 
   const dispatch = useDispatch();
 

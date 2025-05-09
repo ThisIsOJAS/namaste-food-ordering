@@ -11,7 +11,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  console.log("aaja bhai", cartItems[0]);
+  // console.log("aaja bhai", cartItems[0]);
 
   return (
     <div className="text-center m-5 p-5 ">

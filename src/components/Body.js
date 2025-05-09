@@ -15,24 +15,23 @@ const Body = () => {
   const { loggedInUser, setUserName, userName } = useContext(UserContext);
 
   useEffect(() => {
+    const fetchdata = async () => {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+
+      const json = await data.json();
+
+      setResList(
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      );
+
+      setCopyList(
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      );
+    };
     fetchdata();
   }, []);
-
-  const fetchdata = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-
-    const json = await data.json();
-
-    setResList(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-    );
-
-    setCopyList(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-    );
-  };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
