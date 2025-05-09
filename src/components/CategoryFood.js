@@ -8,7 +8,7 @@ const CategoryFood = (props) => {
   const { vegClassifier } = item?.card?.info?.itemAttribute;
   const { isCart } = props;
 
-  console.log("raju", item.card.info.name);
+  console.log("hello", props.khana);
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,10 @@ const CategoryFood = (props) => {
   };
 
   return (
-    <div className="pt-2 pb-4 my-2 border-b border-dashed border-slate-400 flex justify-between">
+    <div
+      className="pt-2 pb-4 my-2 border-b border-dashed border-slate-400 flex justify-between"
+      data-testid="foodItem"
+    >
       <span className="w-9/12 mr-2">
         <h1 className="text-left">
           {vegClassifier == "VEG" ? (

@@ -4,7 +4,10 @@ import React from "react";
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo } = resData?.info;
   return (
-    <div className="rounded-3xl overflow-hidden h-[400px] hover:scale-110 transition-all ease-in-out bg-[#ffffff3d] shadow-2xl">
+    <div
+      data-testid="resCard"
+      className="rounded-3xl overflow-hidden h-[400px] hover:scale-110 transition-all ease-in-out bg-[#ffffff3d] shadow-2xl"
+    >
       <div className="h-64">
         <img
           className="h-full w-full object-cover"

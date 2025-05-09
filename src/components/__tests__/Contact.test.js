@@ -2,42 +2,44 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-it("Should load contact us component", () => {
-  render(<Contact />);
+describe("Contact Page Test Cases", () => {
+  it("Should load contact us component", () => {
+    render(<Contact />);
 
-  const heading = screen.getByRole("heading");
+    const heading = screen.getByRole("heading");
 
-  expect(heading).toBeInTheDocument();
-});
+    expect(heading).toBeInTheDocument();
+  });
 
-it("Should load button inside contact component", () => {
-  render(<Contact />);
+  it("Should load button inside contact component", () => {
+    render(<Contact />);
 
-  const button = screen.getByRole("button");
+    const button = screen.getByRole("button");
 
-  expect(button).toBeInTheDocument();
-});
+    expect(button).toBeInTheDocument();
+  });
 
-it("Should find the text inside contact component", () => {
-  render(<Contact />);
+  it("Should find the text inside contact component", () => {
+    render(<Contact />);
 
-  const text = screen.getByText("Send me an email");
+    const text = screen.getByText("Send me an email");
 
-  expect(text).toBeInTheDocument();
-});
+    expect(text).toBeInTheDocument();
+  });
 
-it("Should load input name inside contact component", () => {
-  render(<Contact />);
+  it("Should load input name inside contact component", () => {
+    render(<Contact />);
 
-  const inputName = screen.getByPlaceholderText("name");
+    const inputName = screen.getByPlaceholderText("name");
 
-  expect(inputName).toBeInTheDocument();
-});
+    expect(inputName).toBeInTheDocument();
+  });
 
-it("Should load 2 input boxes inside contact component", () => {
-  render(<Contact />);
+  it("Should load 2 input boxes inside contact component", () => {
+    render(<Contact />);
 
-  const inputBoxes = screen.getAllByRole("textbox");
+    const inputBoxes = screen.getAllByRole("textbox");
 
-  expect(inputBoxes.length).toBe(2);
+    expect(inputBoxes.length).toBe(2);
+  });
 });
