@@ -1,3 +1,5 @@
+⚠️Please use [CORS Extension](https://chromewebstore.google.com/detail/lhobafahddgcelffkeicbaginigeejlf?utm_source=item-share-cb) to use the app.⚠️
+
 # namaste-react
 
 use legacycodes.md to see past episode codes
