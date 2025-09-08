@@ -2,7 +2,14 @@
 
 # namaste-react
 
-use legacycodes.md to see past episode codes
+## Project Snaps
+
+<img width="1895" height="869" alt="image" src="https://github.com/user-attachments/assets/eb117db4-c2fd-4948-b0ea-a05efc913eab" />
+
+<img width="1899" height="870" alt="image" src="https://github.com/user-attachments/assets/fa2763dc-64b4-4e51-b7f5-0b790f544049" />
+
+<img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/824d4db1-b57c-466a-a708-336c613557bb" />
+
 
 ## Episode 1 code uploaded
 
